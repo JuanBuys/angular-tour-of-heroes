@@ -40,13 +40,6 @@ getHero(id: number): Observable<Hero> {
   );
 }
 
-save(): void {
-  if (this.hero) {
-    this.heroService.updateHero(this.hero)
-      .subscribe(() => this.goBack());
-  }
-}
-
 /** POST: add a new hero to the server */
 addHero(hero: Hero): Observable<Hero> {
   return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
